@@ -645,16 +645,6 @@ call <Sid>X('TSVariable'           , s:purple_light , s:none , 'none')      " Va
 call <Sid>X('TSVariableBuiltin'    , s:yellow       , s:none , 'none')      " Variable names that are defined by the languages, like `this` or `self`.
 
 " Custom Colors {{{1
-call <Sid>X("StatusLineMode"         , s:cyan   , s:mono1 , 'none')
-call <Sid>X("StatusLineFileName"     , s:yellow , s:mono1 , 'none')
-call <Sid>X("StatusLineModified"     , s:red    , s:mono1 , 'none')
-call <Sid>X("StatusLineReadOnly"     , s:red    , s:mono1 , 'none')
-call <Sid>X("StatusLineLsp"          , s:green  , s:mono1 , 'none')
-call <Sid>X("StatusLineFileType"     , s:mono3  , s:mono1 , 'none')
-call <Sid>X("StatusLineEncoding"     , s:mono3  , s:mono1 , 'none')
-call <Sid>X("StatusLinePercentage"   , s:blue   , s:mono1 , 'none')
-call <Sid>X("StatusLineColumnNumber" , s:purple , s:mono1 , 'none')
-call <Sid>X("StatusLineLineNumber"   , s:cyan   , s:mono1 , 'none')
 call <Sid>X("TabLine"                , s:mono3  , s:none  , 'none')
 call <Sid>X("TabLineFill"            , s:mono3  , s:none  , 'none')
 call <Sid>X("TabLineSel"             , s:white  , s:black , 'none')
