@@ -1,4 +1,3 @@
-highlight clear
 syntax reset
 let g:colors_name = 'onedark'
 
