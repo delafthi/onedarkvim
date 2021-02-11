@@ -149,7 +149,7 @@ call <Sid>X('EndOfBuffer'  , s:mono1        , s:none    , 'none')         " fill
 call <Sid>X('TermCursor'   , s:white        , s:none    , 'bold,reverse') " cursor in a focused terminal
 call <Sid>X('TermCursorNC' , s:mono2        , s:none    , 'bold,reverse') " cursor in an unfocused terminal
 call <Sid>X('ErrorMsg'     , s:red          , s:none    , 'none')         " error messages on the command line
-call <Sid>X('VertSplit'    , s:mono4        , s:none    , 'bold')         " the column separating vertically split windows
+call <Sid>X('VertSplit'    , s:mono1        , s:none    , 'bold')         " the column separating vertically split windows
 call <Sid>X('Folded'       , s:none         , s:mono2   , 'bold')         " line used for closed folds
 call <Sid>X('FoldColumn'   , s:none         , s:mono2   , 'none')         " 'foldcolumn'
 call <Sid>X('SignColumn'   , s:white        , s:black   , 'none')          " column where signs are displayed
