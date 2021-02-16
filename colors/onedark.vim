@@ -132,7 +132,7 @@ call <Sid>X('SpellCap'     , s:yellow       , s:none    , 'none')         " Word
 call <Sid>X('SpellLocal'   , s:yellow_dark  , s:none    , 'none')         " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call <Sid>X('SpellRare'    , s:yellow_light , s:none    , 'none')         " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 call <Sid>X('StatusLine'   , s:white        , s:mono0   , 'none')         " status line of current window
-call <Sid>X('StatusLineNC' , s:mono5        , s:mono0   , 'none')         " status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call <Sid>X('StatusLineNC' , s:mono0        , s:none    , 'bold')         " status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call <Sid>X('TabLine'      , s:mono4        , s:mono0   , 'none')         " tab  pages line, not active tap page label
 call <Sid>X('TabLineFill'  , s:none         , s:mono0   , 'none')         " tab  pages line, where there are no labels
 call <Sid>X('TabLineSel'   , s:white        , s:black   , 'none')         " tab  pages line, active tab page label
