@@ -2,29 +2,29 @@ syntax reset
 let g:colors_name = 'onedark'
 
 " Dark color scheme {{{1
-let s:red          = ['#e06c75', '4']   
-let s:green        = ['#98c379', '2']   
-let s:orange       = ['#e59F70', '130'] 
-let s:yellow       = ['#e5c07b', '6']   
-let s:blue         = ['#61afef', '1']   
-let s:purple       = ['#c678dd', '5']   
-let s:cyan         = ['#56b6c2', '3']   
+let s:red          = ['#e06c75', '4']
+let s:green        = ['#98c379', '2']
+let s:orange       = ['#e59F70', '130']
+let s:yellow       = ['#e5c07b', '6']
+let s:blue         = ['#61afef', '1']
+let s:purple       = ['#c678dd', '5']
+let s:cyan         = ['#56b6c2', '3']
 
-let s:red_dark     = ['#be646a', '88']  
-let s:green_dark   = ['#7e9d69', '22']  
-let s:orange_dark  = ['#c08768', '130'] 
-let s:yellow_dark  = ['#bd9e6f', '136'] 
-let s:blue_dark    = ['#5f96c9', '62']  
-let s:purple_dark  = ['#a86cbb', '97'] 
-let s:cyan_dark    = ['#51969f', '66']  
+let s:red_dark     = ['#be646a', '88']
+let s:green_dark   = ['#7e9d69', '22']
+let s:orange_dark  = ['#c08768', '130']
+let s:yellow_dark  = ['#bd9e6f', '136']
+let s:blue_dark    = ['#5f96c9', '62']
+let s:purple_dark  = ['#a86cbb', '97']
+let s:cyan_dark    = ['#51969f', '66']
 
-let s:red_light    = ['#e8838c', '12']  
-let s:green_light  = ['#a6d18c', '10']  
-let s:orange_light = ['#ecb07e', '173'] 
-let s:yellow_light = ['#eccd84', '14']  
-let s:blue_light   = ['#75c2f3', '9']   
-let s:purple_light = ['#d38de6', '13']  
-let s:cyan_light   = ['#69c7d1', '11']  
+let s:red_light    = ['#e8838c', '12']
+let s:green_light  = ['#a6d18c', '10']
+let s:orange_light = ['#ecb07e', '173']
+let s:yellow_light = ['#eccd84', '14']
+let s:blue_light   = ['#75c2f3', '9']
+let s:purple_light = ['#d38de6', '13']
+let s:cyan_light   = ['#69c7d1', '11']
 
 let s:black        = ['#282c34', '0']
 let s:white        = ['#dcdfe4', '15']
@@ -181,7 +181,7 @@ call <Sid>X('StatusLine'   , s:white        , s:mono1   , 'none')         " stat
 call <Sid>X('StatusLineNC' , s:mono4        , s:mono1   , 'none')         " status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call <Sid>X('TabLine'      , s:mono3        , s:mono1   , 'none')         " tab  pages line, not active tap page label
 call <Sid>X('TabLineFill'  , s:none         , s:mono1   , 'none')         " tab  pages line, where there are no labels
-call <Sid>X('TabLineSel'   , s:white        , s:mono1   , 'none')         " tab  pages line, active tab page label
+call <Sid>X('TabLineSel'   , s:white        , s:black   , 'none')         " tab  pages line, active tab page label
 call <Sid>X('Title'        , s:green        , s:none    , 'bold')         " titles for output from ':set all', ':autocmd' etc.
 call <Sid>X('Visual'       , s:black        , s:blue    , 'none')      " Visual mode selection
 call <Sid>X('VisualNOS'    , s:black        , s:blue    , 'inverse')      " Visual mode selection when vim is 'Not Owning the Selection' . Only X11 Gui's gui-x11 and xterm-clipboard supports this.
