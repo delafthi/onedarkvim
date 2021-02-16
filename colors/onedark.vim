@@ -29,7 +29,8 @@ let s:cyan_light   = ['#69c7d1', '11']
 let s:black        = ['#282c34', '0']
 let s:white        = ['#dcdfe4', '15']
 
-let s:mono1        = ['#313640', '16']
+let s:mono0        = ['#313640', '235']
+let s:mono1        = ['#3e4452', '236']
 let s:mono2        = ['#4b5263', '59']
 let s:mono3        = ['#5c6370', '59']
 let s:mono4        = ['#919baa', '245']
@@ -48,7 +49,7 @@ if has('nvim')
   let g:terminal_color_5 = s:purple_dark[0]
   let g:terminal_color_6 = s:cyan_dark[0]
   let g:terminal_color_7 = s:black[0]
-  let g:terminal_color_8 = s:mono1[0]
+  let g:terminal_color_8 = s:mono0[0]
   let g:terminal_color_9 = s:red[0]
   let g:terminal_color_10 = s:green[0]
   let g:terminal_color_11 = s:yellow[0]
@@ -84,23 +85,23 @@ endfunction
 
 " Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{1
 
-call <Sid>X('ColorColumn'  , s:none         , s:mono1   , 'none')         " used for the columns set with 'colorcolumn'
+call <Sid>X('ColorColumn'  , s:none         , s:mono0   , 'none')         " used for the columns set with 'colorcolumn'
 call <Sid>X('Conceal'      , s:none         , s:none    , 'none')         " placeholder characters substituted for concealed text (see 'conceallevel')
 call <Sid>X('Cursor'       , s:white        , s:none    , 'bold,reverse') " the character under the cursor
 call <Sid>X('lCursor'      , s:white        , s:none    , 'bold,reverse') " the character under the crusor when language-mapping is used (see 'guicursor')
 call <Sid>X('CursorIM'     , s:none         , s:none    , 'none')         " like Cursor, but used when in IME mode
 call <Sid>X('CursorColumn' , s:none         , s:none    , 'bold,reverse') " Screen-column at the  cursor, when 'cursorcolumn' is set.
-call <Sid>X('CursorLine'   , s:none         , s:mono1   , 'none')         " Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guigf) is not set.
+call <Sid>X('CursorLine'   , s:none         , s:mono0   , 'none')         " Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guigf) is not set.
 call <Sid>X('Directory'    , s:blue         , s:none    , 'bold')         " directory names (and other special names in listings)
 call <Sid>X('DiffAdd'      , s:green        , s:none    , 'reverse')      " diff mode: Added line
 call <Sid>X('DiffChange'   , s:yellow       , s:none    , 'reverse')      " diff mode: Changed line
 call <Sid>X('DiffDelete'   , s:red          , s:none    , 'reverse')      " diff mode: Deleted line
 call <Sid>X('DiffText'     , s:yellow       , s:none    , 'reverse')      " diff mode: Changed text within a changed line
-call <Sid>X('EndOfBuffer'  , s:mono1        , s:none    , 'none')         " filler lines (~) after the last line in the buffer
+call <Sid>X('EndOfBuffer'  , s:mono0        , s:none    , 'none')         " filler lines (~) after the last line in the buffer
 call <Sid>X('TermCursor'   , s:white        , s:none    , 'bold,reverse') " cursor in a focused terminal
 call <Sid>X('TermCursorNC' , s:mono2        , s:none    , 'bold,reverse') " cursor in an unfocused terminal
 call <Sid>X('ErrorMsg'     , s:red          , s:none    , 'none')         " error messages on the command line
-call <Sid>X('VertSplit'    , s:mono1        , s:none    , 'bold')         " the column separating vertically split windows
+call <Sid>X('VertSplit'    , s:mono0        , s:none    , 'bold')         " the column separating vertically split windows
 call <Sid>X('Folded'       , s:none         , s:mono2   , 'bold')         " line used for closed folds
 call <Sid>X('FoldColumn'   , s:none         , s:mono2   , 'none')         " 'foldcolumn'
 call <Sid>X('SignColumn'   , s:white        , s:black   , 'none')          " column where signs are displayed
@@ -117,7 +118,7 @@ call <Sid>X('NonText'      , s:mono3        , s:none    , 'none')         " '~' 
 call <Sid>X('Normal'       , s:white        , s:none    , 'none')         " normal text
 call <Sid>X('NormalFloat'  , s:white        , s:none    , 'none')         " normal text in floating windows
 call <Sid>X('NormalNC'     , s:white        , s:none    , 'none')         " normal text in non-current windows
-call <Sid>X('Pmenu'        , s:white        , s:mono2   , 'none')         " Popup menu: normal item.
+call <Sid>X('Pmenu'        , s:white        , s:mono1   , 'none')         " Popup menu: normal item.
 call <Sid>X('PmenuSel'     , s:blue         , s:none    , 'bold,reverse') " Popup menu: selected item.
 call <Sid>X('PmenuSbar'    , s:none         , s:mono4   , 'none')         " Popup menu: scrollbar.
 call <Sid>X('PmenuThumb'   , s:none         , s:white   , 'none')         " Popup menu: Thumb of the scrollbar.
@@ -129,10 +130,10 @@ call <Sid>X('SpellBad'     , s:red          , s:none    , 'undercurl')    " Word
 call <Sid>X('SpellCap'     , s:yellow       , s:none    , 'none')         " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call <Sid>X('SpellLocal'   , s:yellow_dark  , s:none    , 'none')         " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call <Sid>X('SpellRare'    , s:yellow_light , s:none    , 'none')         " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call <Sid>X('StatusLine'   , s:white        , s:mono1   , 'none')         " status line of current window
-call <Sid>X('StatusLineNC' , s:mono4        , s:mono1   , 'none')         " status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
-call <Sid>X('TabLine'      , s:mono3        , s:mono1   , 'none')         " tab  pages line, not active tap page label
-call <Sid>X('TabLineFill'  , s:none         , s:mono1   , 'none')         " tab  pages line, where there are no labels
+call <Sid>X('StatusLine'   , s:white        , s:mono0   , 'none')         " status line of current window
+call <Sid>X('StatusLineNC' , s:mono4        , s:mono0   , 'none')         " status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call <Sid>X('TabLine'      , s:mono3        , s:mono0   , 'none')         " tab  pages line, not active tap page label
+call <Sid>X('TabLineFill'  , s:none         , s:mono0   , 'none')         " tab  pages line, where there are no labels
 call <Sid>X('TabLineSel'   , s:white        , s:black   , 'none')         " tab  pages line, active tab page label
 call <Sid>X('Title'        , s:green        , s:none    , 'bold')         " titles for output from ':set all', ':autocmd' etc.
 call <Sid>X('Visual'       , s:black        , s:blue    , 'none')      " Visual mode selection
@@ -335,7 +336,7 @@ call <Sid>X('htmlTagN'           , s:red    , s:none  , 'none')
 call <Sid>X('htmlSpecialTagName' , s:red    , s:none  , 'none')
 call <Sid>X('htmlTag'            , s:mono4  , s:none  , 'none')
 call <Sid>X('htmlEndTag'         , s:mono4  , s:none  , 'none')
-call <Sid>X('MatchTag'           , s:red    , s:mono1 , 'bold,underline')
+call <Sid>X('MatchTag'           , s:red    , s:mono0 , 'bold,underline')
 
 " JavaScript
 call <Sid>X('coffeeString'                   , s:green    , s:none , 'none')
@@ -493,7 +494,7 @@ call <Sid>X('vimCommand'      , s:red        , s:none  , 'none')
 call <Sid>X('vimCommentTitle' , s:mono3      , s:none  , 'bold')
 call <Sid>X('vimFunction'     , s:blue       , s:none  , 'bold')
 call <Sid>X('vimFuncName'     , s:blue_dark  , s:none  , 'bold')
-call <Sid>X('vimHighlight'    , s:blue       , s:mono1 , 'none')
+call <Sid>X('vimHighlight'    , s:blue       , s:mono0 , 'none')
 call <Sid>X('vimLineComment'  , s:mono3      , s:none  , 'none')
 call <Sid>X('vimParenSep'     , s:blue       , s:none  , 'none')
 call <Sid>X('vimSep'          , s:white      , s:none  , 'none')
