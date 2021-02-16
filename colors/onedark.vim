@@ -82,54 +82,6 @@ function! <Sid>X(group, fg, bg, attr, ...)
   endif
 endfunction
 
-" Syntax Groups (descriptions and ordering from `:h w18`) {{{1
-
-call <Sid>X('Comment'        , s:mono3        , s:none , 'none')            " any comment
-
-call <Sid>X('Constant'       , s:cyan         , s:none , 'none')            " any constant
-call <Sid>X('String'         , s:green        , s:none , 'none')            " this is a string
-call <Sid>X('Character'      , s:green_light  , s:none , 'none')            " a character constant: 'c', '\n'
-call <Sid>X('Number'         , s:orange       , s:none , 'none')            " a boolean constant: TRUE, false
-call <Sid>X('Boolean'        , s:orange_light , s:none , 'none')            " a boolean constant: TRUE, false
-call <Sid>X('Float'          , s:orange_dark  , s:none , 'none')            " a floating point constant: 2.3e10
-
-call <Sid>X('Identifier'     , s:red          , s:none , 'none')            " any variable name
-call <Sid>X('Function'       , s:blue         , s:none , 'bold')            " function name (also: methods for classes)
-
-call <Sid>X('Statement'      , s:purple       , s:none , 'italic')          " any statement
-call <Sid>X('Conditional'    , s:purple       , s:none , 'italic')          " if, then, else, endif, switch, etc.
-call <Sid>X('Repeat'         , s:purple       , s:none , 'italic')          " for, do, while, etc.
-call <Sid>X('Label'          , s:purple       , s:none , 'italic')          " case, default, etc.
-call <Sid>X('Operator'       , s:purple_light , s:none , 'none')            " sizeof ' , ' + ' , ' * ' , etc.
-call <Sid>X('Keyword'        , s:blue         , s:none , 'italic')          " any other keyword
-call <Sid>X('Exception'      , s:purple_dark  , s:none , 'italic')          " try, catch, throw
-
-call <Sid>X('PreProc'        , s:yellow       , s:none , 'none')            " generic Preprocessor
-call <Sid>X('Include'        , s:blue         , s:none , 'none')            " preprocessor #include
-call <Sid>X('Define'         , s:purple       , s:none , 'none')            " preprocessor #define
-call <Sid>X('Macro'          , s:purple       , s:none , 'bold')            " same as Define
-call <Sid>X('PreCondit'      , s:yellow       , s:none , 'none')            " preprocessor #if, #else, #endif, etc.
-
-call <Sid>X('Type'           , s:yellow       , s:none , 'none')            " int, long, char, etc.
-call <Sid>X('StorageClass'   , s:yellow_dark  , s:none , 'bold')            " static, register, volatile, etc.
-call <Sid>X('Structure'      , s:yellow_light , s:none , 'bold')            " struct, union, enum, etc.
-call <Sid>X('Typedef'        , s:yellow_light , s:none , 'none')            " A typedef
-
-call <Sid>X('Special'        , s:blue         , s:none , 'italic')          " any special symbol
-call <Sid>X('SpecialChar'    , s:yellow_dark  , s:none , 'bold')            " special character in a constant
-call <Sid>X('Tag'            , s:none         , s:none , 'none')            " you can use CTRL-] on this
-call <Sid>X('Delimiter'      , s:none         , s:none , 'none')            " character that needs attention
-call <Sid>X('SpecialComment' , s:mono3        , s:none , 'none')            " special things inside a comment
-call <Sid>X('Debug'          , s:none         , s:none , 'bold')            " debugging statements
-
-call <Sid>X('Underlined'     , s:blue         , s:none , 'underline')       " text that stands out, HTML links
-
-call <Sid>X('Ignore'         , s:none         , s:none , 'none')            " left blank, hidden
-
-call <Sid>X('Error'          , s:red          , s:none , 'none')            " any erroneous construct
-
-call <Sid>X('Todo'           , s:purple       , s:none , 'bold,reverse') " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-
 " Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{1
 
 call <Sid>X('ColorColumn'  , s:none         , s:mono1   , 'none')         " used for the columns set with 'colorcolumn'
@@ -188,6 +140,54 @@ call <Sid>X('VisualNOS'    , s:black        , s:blue    , 'inverse')      " Visu
 call <Sid>X('WarningMsg'   , s:yellow       , s:none    , 'none')         " warning messages                                  '
 call <Sid>X('Whitespace'   , s:mono3        , s:none    , 'none')         " 'nbsp', 'space', ' tab ' and ' trail ' in 'listchars'
 call <Sid>X('WildMenu'     , s:blue         , s:none    , 'bold,reverse') " current match in 'wildmenu' completion
+
+" Syntax Groups (descriptions and ordering from `:h w18`) {{{1
+
+call <Sid>X('Comment'        , s:mono3        , s:none , 'none')            " any comment
+
+call <Sid>X('Constant'       , s:orange       , s:none , 'none')            " any constant
+call <Sid>X('String'         , s:green        , s:none , 'none')            " this is a string
+call <Sid>X('Character'      , s:green_light  , s:none , 'none')            " a character constant: 'c', '\n'
+call <Sid>X('Number'         , s:yellow       , s:none , 'none')            " a boolean constant: TRUE, false
+call <Sid>X('Boolean'        , s:orange       , s:none , 'none')            " a boolean constant: TRUE, false
+call <Sid>X('Float'          , s:yellow_light , s:none , 'none')            " a floating point constant: 2.3e10
+
+call <Sid>X('Identifier'     , s:red          , s:none , 'none')            " any variable name
+call <Sid>X('Function'       , s:blue         , s:none , 'bold')            " function name (also: methods for classes)
+
+call <Sid>X('Statement'      , s:purple       , s:none , 'italic')          " any statement
+call <Sid>X('Conditional'    , s:purple       , s:none , 'italic')          " if, then, else, endif, switch, etc.
+call <Sid>X('Repeat'         , s:purple       , s:none , 'italic')          " for, do, while, etc.
+call <Sid>X('Label'          , s:purple       , s:none , 'italic')          " case, default, etc.
+call <Sid>X('Operator'       , s:cyan         , s:none , 'none')            " sizeof ' , ' + ' , ' * ' , etc.
+call <Sid>X('Keyword'        , s:red          , s:none , 'italic')          " any other keyword
+call <Sid>X('Exception'      , s:red_light    , s:none , 'italic')          " try, catch, throw
+
+call <Sid>X('PreProc'        , s:yellow       , s:none , 'none')            " generic Preprocessor
+call <Sid>X('Include'        , s:blue         , s:none , 'none')            " preprocessor #include
+call <Sid>X('Define'         , s:purple       , s:none , 'none')            " preprocessor #define
+call <Sid>X('Macro'          , s:purple       , s:none , 'bold')            " same as Define
+call <Sid>X('PreCondit'      , s:yellow       , s:none , 'none')            " preprocessor #if, #else, #endif, etc.
+
+call <Sid>X('Type'           , s:yellow       , s:none , 'none')            " int, long, char, etc.
+call <Sid>X('StorageClass'   , s:yellow       , s:none , 'bold')            " static, register, volatile, etc.
+call <Sid>X('Structure'      , s:yellow       , s:none , 'bold')            " struct, union, enum, etc.
+call <Sid>X('Typedef'        , s:yellow       , s:none , 'none')            " A typedef
+
+call <Sid>X('Special'        , s:blue         , s:none , 'italic')          " any special symbol
+call <Sid>X('SpecialChar'    , s:none         , s:none , 'bold')            " special character in a constant
+call <Sid>X('Tag'            , s:none         , s:none , 'none')            " you can use CTRL-] on this
+call <Sid>X('Delimiter'      , s:white        , s:none , 'none')            " character that needs attention
+call <Sid>X('SpecialComment' , s:mono4        , s:none , 'none')            " special things inside a comment
+call <Sid>X('Debug'          , s:none         , s:none , 'bold')            " debugging statements
+
+call <Sid>X('Underlined'     , s:blue         , s:none , 'underline')       " text that stands out, HTML links
+
+call <Sid>X('Ignore'         , s:none         , s:none , 'none')            " left blank, hidden
+
+call <Sid>X('Error'          , s:red          , s:none , 'none')            " any erroneous construct
+
+call <Sid>X('Todo'           , s:purple       , s:none , 'bold,reverse') " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 " Language-Specific Highlighting {{{1
 
@@ -450,16 +450,15 @@ call <Sid>X('purescriptOperator'    , s:white  , s:none , 'none')
 
 " Python
 call <Sid>X('pythonImport'          , s:purple , s:none , 'none')
-call <Sid>X('pythonBuiltin'         , s:cyan   , s:none , 'none')
-call <Sid>X('pythonStatement'       , s:purple , s:none , 'none')
-call <Sid>X('pythonParam'           , s:orange , s:none , 'none')
-call <Sid>X('pythonEscape'          , s:red    , s:none , 'none')
-call <Sid>X('pythonSelf'            , s:mono4  , s:none , 'italic')
+call <Sid>X('pythonBuiltin'         , s:orange , s:none , 'none')
+call <Sid>X('pythonStatement'       , s:purple , s:none , 'italic')
+call <Sid>X('pythonParam'           , s:cyan   , s:none , 'none')
+call <Sid>X('pythonSelf'            , s:yellow , s:none , 'none')
 call <Sid>X('pythonClass'           , s:blue   , s:none , 'none')
-call <Sid>X('pythonOperator'        , s:purple , s:none , 'none')
-call <Sid>X('pythonEscape'          , s:red    , s:none , 'none')
-call <Sid>X('pythonFunction'        , s:blue   , s:none , 'none')
-call <Sid>X('pythonKeyword'         , s:blue   , s:none , 'none')
+call <Sid>X('pythonOperator'        , s:cyan   , s:none , 'none')
+call <Sid>X('pythonEscape'          , s:cyan   , s:none , 'none')
+call <Sid>X('pythonFunction'        , s:blue   , s:none , 'bold')
+call <Sid>X('pythonKeyword'         , s:red    , s:none , 'none')
 call <Sid>X('pythonModule'          , s:purple , s:none , 'none')
 call <Sid>X('pythonStringDelimiter' , s:green  , s:none , 'none')
 call <Sid>X('pythonSymbol'          , s:cyan   , s:none , 'none')
@@ -595,56 +594,52 @@ call <Sid>X('LspDiagnosticsSignHint'               , s:mono4  , s:none , 'none')
 " Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
 call <Sid>X('TSAnnotation'         , s:yellow       , s:none , 'none')      " For C++/Dart attributes ,annotations that can be attached to the code to denote some kind of meta information.
 call <Sid>X('TSAttribute'          , s:cyan         , s:none , 'none')      " unstable TODO: docs
-call <Sid>X('TSBoolean'            , s:orange_light , s:none , 'none')      " For booleans
+call <Sid>X('TSBoolean'            , s:orange       , s:none , 'none')      " For booleans
 call <Sid>X('TSCharacter'          , s:green_light  , s:none , 'none')      " For characters
 call <Sid>X('TSComment'            , s:mono3        , s:none , 'none')      " For commented blocks.
 call <Sid>X('TSConstructor'        , s:cyan         , s:none , 'none')      " For constructor calls and definitions: {} in Lua, and Java constructors.
 call <Sid>X('TSConditional'        , s:purple       , s:none , 'italic')    " For keywords related to conditionnals
-call <Sid>X('TSConstant'           , s:cyan         , s:none , 'none')      " For constants
+call <Sid>X('TSConstant'           , s:orange       , s:none , 'none')      " For constants
 call <Sid>X('TSConstBuiltin'       , s:orange       , s:none , 'none')      " For constant that are built in the language: `nil` in Lua
 call <Sid>X('TSConstMacro'         , s:cyan         , s:none , 'none')      " For constants that are defined by macros: `NULL` in C
 call <Sid>X('TSError'              , s:red          , s:none , 'none')      " For syntax/par
-call <Sid>X('TSException'          , s:purple_dark  , s:none , 'italic')    " For exception related keywords.
+call <Sid>X('TSException'          , s:red_light    , s:none , 'italic')    " For exception related keywords.
 call <Sid>X('TSField'              , s:red          , s:none , 'none')      " For fields.
-call <Sid>X('TSFloat'              , s:orange_dark  , s:none , 'none')      " For floats
+call <Sid>X('TSFloat'              , s:yellow_light , s:none , 'none')      " For floats
 call <Sid>X('TSFunction'           , s:blue         , s:none , 'bold')      " For function (calls and definitions
 call <Sid>X('TSFuncBuiltin'        , s:blue         , s:none , 'bold')      " For builtin functions: `table.insert` in Lua
 call <Sid>X('TSFuncMacro'          , s:yellow       , s:none , 'none')      " For macro defined functions (calls and definitions): each `macro_rules` in Rust.
 call <Sid>X('TSInclude'            , s:blue         , s:none , 'none')      " For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-call <Sid>X('TSKeyword'            , s:blue         , s:none , 'italic')    " For keywords that don't fall in previous categories.
+call <Sid>X('TSKeyword'            , s:red          , s:none , 'italic')    " For keywords that don't fall in previous categories.
 call <Sid>X('TSKeywordFunction'    , s:red          , s:none , 'none')      " For keywords used to define a function.
 call <Sid>X('TSLabel'              , s:purple       , s:none , 'italic')    " For labels: `label:` in C and `:label:` in Lua
 call <Sid>X('TSMethod'             , s:blue         , s:none , 'none')      " For method calls and definitions.
-call <Sid>X('TSNamespace'          , s:purple_light , s:none , 'none')      " For identifiers referring to modules and namespaces.
-call <Sid>X('TSNumber'             , s:orange       , s:none , 'none')      " For integers
-call <Sid>X('TSOperator'           , s:purple_light , s:none , 'none')      " For any operator: `+`, but also `->` and `*` in C
+call <Sid>X('TSNamespace'          , s:red_light    , s:none , 'none')      " For identifiers referring to modules and namespaces.
+call <Sid>X('TSNumber'             , s:yellow       , s:none , 'none')      " For integers
+call <Sid>X('TSOperator'           , s:cyan         , s:none , 'none')      " For any operator: `+`, but also `->` and `*` in C
 call <Sid>X('TSParameter'          , s:cyan         , s:none , 'none')      " For parameters of a function.
 call <Sid>X('TSParameterReference' , s:cyan         , s:none , 'none')      " For references to parameters of a function.
 call <Sid>X('TSProperty'           , s:red          , s:none , 'none')      " Same as `TSField`.
-call <Sid>X('TSPunctDelimiter'     , s:none         , s:none , 'none')      " For delimiters ie: `.
+call <Sid>X('TSPunctDelimiter'     , s:white        , s:none , 'none')      " For delimiters ie: `.
 call <Sid>X('TSPunctBracket'       , s:blue         , s:none , 'none')      " For brackets and parens
 call <Sid>X('TSPunctSpecial'       , s:white        , s:none , 'none')      " For special punctuation that does not fall in the categories before
 call <Sid>X('TSRepeat'             , s:purple       , s:none , 'italic')    " For keywords related to loops
 call <Sid>X('TSString'             , s:green        , s:none , 'none')      " For strings
-call <Sid>X('TSStringRegex'        , s:green_dark   , s:none , 'none')      " For regexes
+call <Sid>X('TSStringRegex'        , s:green_light  , s:none , 'none')      " For regexes
 call <Sid>X('TSStringEscape'       , s:cyan         , s:none , 'none')      " For escape characters within a string
-call <Sid>X('TSStructure'          , s:yellow_light , s:none , 'bold')      " This is left as an exercise for the reader.
-call <Sid>X('TSStrong'             , s:yellow       , s:none , 'bold')      " For text to be represented with strong.
+call <Sid>X('TSStructure'          , s:yellow       , s:none , 'bold')      " This is left as an exercise for the reader.
+call <Sid>X('TSStrong'             , s:none         , s:none , 'bold')      " For text to be represented with strong.
 call <Sid>X('TSTag'                , s:none         , s:none , 'none')      " Tags like html tag names.
-call <Sid>X('TSTagDelimeter'       , s:purple       , s:none , 'none')      " Tag delimiter link < > /
-call <Sid>X('TSText'               , s:yellow       , s:none , 'none')      " For strings considered text in a markup language.
-call <Sid>X('TSEmphasis'           , s:yellow       , s:none , 'italic')    " For text to be represented with emphasis.
-call <Sid>X('TSUnderline'          , s:yellow       , s:none , 'underline') " TSUnderline
-call <Sid>X('TSTitle'              , s:red          , s:none , 'bold')      " Text that is part of a title.
-call <Sid>X('TSLiteral'            , s:cyan         , s:none , 'bold')      " Literal text.
+call <Sid>X('TSTagDelimeter'       , s:blue         , s:none , 'none')      " Tag delimiter link < > /
+call <Sid>X('TSText'               , s:green_dark   , s:none , 'none')      " For strings considered text in a markup language.
+call <Sid>X('TSEmphasis'           , s:none         , s:none , 'italic')    " For text to be represented with emphasis.
+call <Sid>X('TSUnderline'          , s:blue         , s:none , 'underline') " TSUnderline
+call <Sid>X('TSTitle'              , s:none         , s:none , 'bold')      " Text that is part of a title.
+call <Sid>X('TSLiteral'            , s:green_dark   , s:none , 'bold')      " Literal text.
 call <Sid>X('TSURI'                , s:blue         , s:none , 'underline') " Any URI like a link or email.
 call <Sid>X('TSType'               , s:yellow       , s:none , 'none')      " For types.
 call <Sid>X('TSTypeBuiltin'        , s:yellow       , s:none , 'none')      " For builtin types (you guessed it, right ?).
-call <Sid>X('TSVariable'           , s:purple_light , s:none , 'none')      " Variable names
+call <Sid>X('TSVariable'           , s:white        , s:none , 'none')      " Variable names
 call <Sid>X('TSVariableBuiltin'    , s:yellow       , s:none , 'none')      " Variable names that are defined by the languages, like `this` or `self`.
 
-" Custom Colors {{{1
-call <Sid>X("TabLine"                , s:mono3  , s:none  , 'none')
-call <Sid>X("TabLineFill"            , s:mono3  , s:none  , 'none')
-call <Sid>X("TabLineSel"             , s:white  , s:black , 'none')
 " }}}1
