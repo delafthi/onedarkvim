@@ -105,10 +105,10 @@ call <Sid>X('ErrorMsg'     , s:red          , s:none    , 'none')         " erro
 call <Sid>X('VertSplit'    , s:mono0        , s:none    , 'bold')         " the column separating vertically split windows
 call <Sid>X('Folded'       , s:none         , s:mono3   , 'bold')         " line used for closed folds
 call <Sid>X('FoldColumn'   , s:none         , s:mono3   , 'none')         " 'foldcolumn'
-call <Sid>X('SignColumn'   , s:white        , s:black   , 'none')          " column where signs are displayed
+call <Sid>X('SignColumn'   , s:white        , s:black   , 'none')         " column where signs are displayed
 call <Sid>X('IncSearch'    , s:yellow_dark  , s:none    , 'bold,reverse') " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 call <Sid>X('Substitute'   , s:yellow_dark  , s:none    , 'bold,reverse') " :substitute replacement text highlighting
-call <Sid>X('LineNr'       , s:mono3        , s:black    , 'none')         " Line number for':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
+call <Sid>X('LineNr'       , s:mono3        , s:black   , 'none')         " Line number for':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
 call <Sid>X('CursorLineNr' , s:blue         , s:none    , 'bold')         " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call <Sid>X('MatchParen'   , s:blue         , s:none    , 'underline')    " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call <Sid>X('ModeMsg'      , s:none         , s:none    , 'none')         " 'showmode' message (eg.,'INSERT')
@@ -137,7 +137,7 @@ call <Sid>X('TabLine'      , s:mono4        , s:mono0   , 'none')         " tab 
 call <Sid>X('TabLineFill'  , s:none         , s:mono0   , 'none')         " tab  pages line, where there are no labels
 call <Sid>X('TabLineSel'   , s:white        , s:black   , 'none')         " tab  pages line, active tab page label
 call <Sid>X('Title'        , s:green        , s:none    , 'bold')         " titles for output from ':set all', ':autocmd' etc.
-call <Sid>X('Visual'       , s:black        , s:blue    , 'none')      " Visual mode selection
+call <Sid>X('Visual'       , s:black        , s:blue    , 'none')         " Visual mode selection
 call <Sid>X('VisualNOS'    , s:black        , s:blue    , 'inverse')      " Visual mode selection when vim is 'Not Owning the Selection' . Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 call <Sid>X('WarningMsg'   , s:yellow       , s:none    , 'none')         " warning messages                                  '
 call <Sid>X('Whitespace'   , s:mono4        , s:none    , 'none')         " 'nbsp', 'space', ' tab ' and ' trail ' in 'listchars'
@@ -189,7 +189,91 @@ call <Sid>X('Ignore'         , s:none         , s:none , 'none')            " le
 
 call <Sid>X('Error'          , s:red          , s:none , 'none')            " any erroneous construct
 
-call <Sid>X('Todo'           , s:purple       , s:none , 'bold,reverse') " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call <Sid>X('Todo'           , s:purple       , s:none , 'bold,reverse')    " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+
+" Neovim Builtins {{{1
+
+" Neovim Support
+call <Sid>X('healthError'   , s:red    , s:none  , 'none')
+call <Sid>X('healthWarning' , s:yellow , s:none  , 'none')
+call <Sid>X('healthSuccess' , s:green  , s:none  , 'none')
+call <Sid>X('TermCursorNC'  , s:white  , s:none  , 'reverse')
+
+" LSP Groups (descriptions and ordering from `:h lsp-highlight`)
+call <Sid>X('LspReferenceText'                     , s:mono5  , s:none , 'none') " used for highlighting 'text' references
+call <Sid>X('LspReferenceRead'                     , s:mono5  , s:none , 'none') " used for highlighting 'read' references
+call <Sid>X('LspReferenceWrite'                    , s:mono5  , s:none , 'none') " used for highlighting 'write' references
+call <Sid>X('LspDiagnosticsDefaultError'           , s:red    , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+call <Sid>X('LspDiagnosticsDefaultWarning'         , s:yellow , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+call <Sid>X('LspDiagnosticsDefaultInformation'     , s:blue   , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+call <Sid>X('LspDiagnosticsDefaultHint'            , s:mono5  , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+call <Sid>X('LspDiagnosticsVirtualTextError'       , s:red    , s:none , 'none') " Used for 'Error' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+call <Sid>X('LspDiagnosticsVirtualTextWarning'     , s:yellow , s:none , 'none') " Used for 'Warning' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+call <Sid>X('LspDiagnosticsVirtualTextInformation' , s:red    , s:none , 'none') " Used for 'Error' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+call <Sid>X('LspDiagnosticsVirtualTextHint'        , s:mono5  , s:none , 'none') " Used for 'Hint' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+call <Sid>X('LspDiagnosticsVirtualUnderlineError'  , s:red    , s:none , 'none') " Used to underline 'Error' diagnostics. See vim.lsp.diagnostic.set_underline()
+call <Sid>X('LspDiagnosticsUnderlineError'         , s:yellow , s:none , 'none') " Used to underline 'Warning' diagnostics. See vim.lsp.diagnostic.set_underline()
+call <Sid>X('LspDiagnosticsUnderlineInformation'   , s:blue   , s:none , 'none') " Used to underline 'Information' diagnostics. See vim.lsp.diagnostic.set_underline()
+call <Sid>X('LspDiagnosticsUnderlineHint'          , s:mono5  , s:none , 'none') " Used to underline 'Hint' diagnostics. See vim.lsp.diagnostic.set_underline()
+call <Sid>X('LspDiagnosticsFloatError'             , s:red    , s:none , 'none') " Used to color 'Error' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+call <Sid>X('LspDiagnosticsFloatWarning'           , s:yellow , s:none , 'none') " Used to color 'Warning' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+call <Sid>X('LspDiagnosticsFloatInformation'       , s:blue   , s:none , 'none') " Used to color 'Information' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+call <Sid>X('LspDiagnosticsFloatHint'              , s:mono5  , s:none , 'none') " Used to color 'Hint' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+call <Sid>X('LspDiagnosticsSignError'              , s:red    , s:none , 'none') " Used to color 'Error' signs in sign column. See vim.lsp.diagnostic.set_signs()
+call <Sid>X('LspDiagnosticsSignWarning'            , s:yellow , s:none , 'none') " Used to color 'Warning' signs in sign column. See vim.lsp.diagnostic.set_signs()
+call <Sid>X('LspDiagnosticsSignInformation'        , s:blue   , s:none , 'none') " Used to color 'Information' signs in sign column. See vim.lsp.diagnostic.set_signs()
+call <Sid>X('LspDiagnosticsSignHint'               , s:mono5  , s:none , 'none') " Used to color 'Hint' signs in sign column. See vim.lsp.diagnostic.set_signs()
+
+" Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
+call <Sid>X('TSAnnotation'         , s:yellow       , s:none , 'none')      " For C++/Dart attributes ,annotations that can be attached to the code to denote some kind of meta information.
+call <Sid>X('TSAttribute'          , s:cyan         , s:none , 'none')      " unstable TODO: docs
+call <Sid>X('TSBoolean'            , s:orange       , s:none , 'none')      " For booleans
+call <Sid>X('TSCharacter'          , s:green_light  , s:none , 'none')      " For characters
+call <Sid>X('TSComment'            , s:mono4        , s:none , 'none')      " For commented blocks.
+call <Sid>X('TSConstructor'        , s:cyan         , s:none , 'none')      " For constructor calls and definitions: {} in Lua, and Java constructors.
+call <Sid>X('TSConditional'        , s:purple       , s:none , 'italic')    " For keywords related to conditionnals
+call <Sid>X('TSConstant'           , s:orange       , s:none , 'none')      " For constants
+call <Sid>X('TSConstBuiltin'       , s:orange       , s:none , 'none')      " For constant that are built in the language: `nil` in Lua
+call <Sid>X('TSConstMacro'         , s:cyan         , s:none , 'none')      " For constants that are defined by macros: `NULL` in C
+call <Sid>X('TSError'              , s:red          , s:none , 'none')      " For syntax/par
+call <Sid>X('TSException'          , s:red_light    , s:none , 'italic')    " For exception related keywords.
+call <Sid>X('TSField'              , s:red          , s:none , 'none')      " For fields.
+call <Sid>X('TSFloat'              , s:yellow_light , s:none , 'none')      " For floats
+call <Sid>X('TSFunction'           , s:blue         , s:none , 'bold')      " For function (calls and definitions
+call <Sid>X('TSFuncBuiltin'        , s:blue         , s:none , 'bold')      " For builtin functions: `table.insert` in Lua
+call <Sid>X('TSFuncMacro'          , s:yellow       , s:none , 'none')      " For macro defined functions (calls and definitions): each `macro_rules` in Rust.
+call <Sid>X('TSInclude'            , s:blue         , s:none , 'none')      " For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+call <Sid>X('TSKeyword'            , s:red          , s:none , 'italic')    " For keywords that don't fall in previous categories.
+call <Sid>X('TSKeywordFunction'    , s:red          , s:none , 'none')      " For keywords used to define a function.
+call <Sid>X('TSLabel'              , s:purple       , s:none , 'italic')    " For labels: `label:` in C and `:label:` in Lua
+call <Sid>X('TSMethod'             , s:blue         , s:none , 'none')      " For method calls and definitions.
+call <Sid>X('TSNamespace'          , s:red_light    , s:none , 'none')      " For identifiers referring to modules and namespaces.
+call <Sid>X('TSNumber'             , s:yellow       , s:none , 'none')      " For integers
+call <Sid>X('TSOperator'           , s:cyan         , s:none , 'none')      " For any operator: `+`, but also `->` and `*` in C
+call <Sid>X('TSParameter'          , s:cyan         , s:none , 'none')      " For parameters of a function.
+call <Sid>X('TSParameterReference' , s:cyan         , s:none , 'none')      " For references to parameters of a function.
+call <Sid>X('TSProperty'           , s:red          , s:none , 'none')      " Same as `TSField`.
+call <Sid>X('TSPunctDelimiter'     , s:white        , s:none , 'none')      " For delimiters ie: `.
+call <Sid>X('TSPunctBracket'       , s:blue         , s:none , 'none')      " For brackets and parens
+call <Sid>X('TSPunctSpecial'       , s:white        , s:none , 'none')      " For special punctuation that does not fall in the categories before
+call <Sid>X('TSRepeat'             , s:purple       , s:none , 'italic')    " For keywords related to loops
+call <Sid>X('TSString'             , s:green        , s:none , 'none')      " For strings
+call <Sid>X('TSStringRegex'        , s:green_light  , s:none , 'none')      " For regexes
+call <Sid>X('TSStringEscape'       , s:cyan         , s:none , 'none')      " For escape characters within a string
+call <Sid>X('TSStructure'          , s:yellow       , s:none , 'bold')      " This is left as an exercise for the reader.
+call <Sid>X('TSStrong'             , s:none         , s:none , 'bold')      " For text to be represented with strong.
+call <Sid>X('TSTag'                , s:none         , s:none , 'none')      " Tags like html tag names.
+call <Sid>X('TSTagDelimeter'       , s:blue         , s:none , 'none')      " Tag delimiter link < > /
+call <Sid>X('TSText'               , s:green_dark   , s:none , 'none')      " For strings considered text in a markup language.
+call <Sid>X('TSEmphasis'           , s:none         , s:none , 'italic')    " For text to be represented with emphasis.
+call <Sid>X('TSUnderline'          , s:blue         , s:none , 'underline') " TSUnderline
+call <Sid>X('TSTitle'              , s:none         , s:none , 'bold')      " Text that is part of a title.
+call <Sid>X('TSLiteral'            , s:green_dark   , s:none , 'bold')      " Literal text.
+call <Sid>X('TSURI'                , s:blue         , s:none , 'underline') " Any URI like a link or email.
+call <Sid>X('TSType'               , s:yellow       , s:none , 'none')      " For types.
+call <Sid>X('TSTypeBuiltin'        , s:yellow       , s:none , 'none')      " For builtin types (you guessed it, right ?).
+call <Sid>X('TSVariable'           , s:white        , s:none , 'none')      " Variable names
+call <Sid>X('TSVariableBuiltin'    , s:yellow       , s:none , 'none')      " Variable names that are defined by the languages, like `this` or `self`.
 
 " Language-Specific Highlighting {{{1
 
@@ -560,88 +644,8 @@ call <Sid>X('StartifySpecial' , s:mono4  , s:none , 'none')
 call <Sid>X('StartifyHeader'  , s:green  , s:none , 'none')
 call <Sid>X('StartifyFooter'  , s:green  , s:none , 'none')
 
-" Neovim Builtins {{{1
-
-" Neovim Support
-call <Sid>X('healthError'   , s:red    , s:none  , 'none')
-call <Sid>X('healthWarning' , s:yellow , s:none  , 'none')
-call <Sid>X('healthSuccess' , s:green  , s:none  , 'none')
-call <Sid>X('TermCursorNC'  , s:white  , s:none  , 'reverse')
-
-" LSP Groups (descriptions and ordering from `:h lsp-highlight`)
-call <Sid>X('LspReferenceText'                     , s:mono5  , s:none , 'none') " used for highlighting 'text' references
-call <Sid>X('LspReferenceRead'                     , s:mono5  , s:none , 'none') " used for highlighting 'read' references
-call <Sid>X('LspReferenceWrite'                    , s:mono5  , s:none , 'none') " used for highlighting 'write' references
-call <Sid>X('LspDiagnosticsDefaultError'           , s:red    , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-call <Sid>X('LspDiagnosticsDefaultWarning'         , s:yellow , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-call <Sid>X('LspDiagnosticsDefaultInformation'     , s:blue   , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-call <Sid>X('LspDiagnosticsDefaultHint'            , s:mono5  , s:none , 'none') " Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-call <Sid>X('LspDiagnosticsVirtualTextError'       , s:red    , s:none , 'none') " Used for 'Error' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-call <Sid>X('LspDiagnosticsVirtualTextWarning'     , s:yellow , s:none , 'none') " Used for 'Warning' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-call <Sid>X('LspDiagnosticsVirtualTextInformation' , s:red    , s:none , 'none') " Used for 'Error' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-call <Sid>X('LspDiagnosticsVirtualTextHint'        , s:mono5  , s:none , 'none') " Used for 'Hint' diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-call <Sid>X('LspDiagnosticsVirtualUnderlineError'  , s:red    , s:none , 'none') " Used to underline 'Error' diagnostics. See vim.lsp.diagnostic.set_underline()
-call <Sid>X('LspDiagnosticsUnderlineError'         , s:yellow , s:none , 'none') " Used to underline 'Warning' diagnostics. See vim.lsp.diagnostic.set_underline()
-call <Sid>X('LspDiagnosticsUnderlineInformation'   , s:blue   , s:none , 'none') " Used to underline 'Information' diagnostics. See vim.lsp.diagnostic.set_underline()
-call <Sid>X('LspDiagnosticsUnderlineHint'          , s:mono5  , s:none , 'none') " Used to underline 'Hint' diagnostics. See vim.lsp.diagnostic.set_underline()
-call <Sid>X('LspDiagnosticsFloatError'             , s:red    , s:none , 'none') " Used to color 'Error' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-call <Sid>X('LspDiagnosticsFloatWarning'           , s:yellow , s:none , 'none') " Used to color 'Warning' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-call <Sid>X('LspDiagnosticsFloatInformation'       , s:blue   , s:none , 'none') " Used to color 'Information' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-call <Sid>X('LspDiagnosticsFloatHint'              , s:mono5  , s:none , 'none') " Used to color 'Hint' diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-call <Sid>X('LspDiagnosticsSignError'              , s:red    , s:none , 'none') " Used to color 'Error' signs in sign column. See vim.lsp.diagnostic.set_signs()
-call <Sid>X('LspDiagnosticsSignWarning'            , s:yellow , s:none , 'none') " Used to color 'Warning' signs in sign column. See vim.lsp.diagnostic.set_signs()
-call <Sid>X('LspDiagnosticsSignInformation'        , s:blue   , s:none , 'none') " Used to color 'Information' signs in sign column. See vim.lsp.diagnostic.set_signs()
-call <Sid>X('LspDiagnosticsSignHint'               , s:mono5  , s:none , 'none') " Used to color 'Hint' signs in sign column. See vim.lsp.diagnostic.set_signs()
-
-" Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
-call <Sid>X('TSAnnotation'         , s:yellow       , s:none , 'none')      " For C++/Dart attributes ,annotations that can be attached to the code to denote some kind of meta information.
-call <Sid>X('TSAttribute'          , s:cyan         , s:none , 'none')      " unstable TODO: docs
-call <Sid>X('TSBoolean'            , s:orange       , s:none , 'none')      " For booleans
-call <Sid>X('TSCharacter'          , s:green_light  , s:none , 'none')      " For characters
-call <Sid>X('TSComment'            , s:mono4        , s:none , 'none')      " For commented blocks.
-call <Sid>X('TSConstructor'        , s:cyan         , s:none , 'none')      " For constructor calls and definitions: {} in Lua, and Java constructors.
-call <Sid>X('TSConditional'        , s:purple       , s:none , 'italic')    " For keywords related to conditionnals
-call <Sid>X('TSConstant'           , s:orange       , s:none , 'none')      " For constants
-call <Sid>X('TSConstBuiltin'       , s:orange       , s:none , 'none')      " For constant that are built in the language: `nil` in Lua
-call <Sid>X('TSConstMacro'         , s:cyan         , s:none , 'none')      " For constants that are defined by macros: `NULL` in C
-call <Sid>X('TSError'              , s:red          , s:none , 'none')      " For syntax/par
-call <Sid>X('TSException'          , s:red_light    , s:none , 'italic')    " For exception related keywords.
-call <Sid>X('TSField'              , s:red          , s:none , 'none')      " For fields.
-call <Sid>X('TSFloat'              , s:yellow_light , s:none , 'none')      " For floats
-call <Sid>X('TSFunction'           , s:blue         , s:none , 'bold')      " For function (calls and definitions
-call <Sid>X('TSFuncBuiltin'        , s:blue         , s:none , 'bold')      " For builtin functions: `table.insert` in Lua
-call <Sid>X('TSFuncMacro'          , s:yellow       , s:none , 'none')      " For macro defined functions (calls and definitions): each `macro_rules` in Rust.
-call <Sid>X('TSInclude'            , s:blue         , s:none , 'none')      " For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-call <Sid>X('TSKeyword'            , s:red          , s:none , 'italic')    " For keywords that don't fall in previous categories.
-call <Sid>X('TSKeywordFunction'    , s:red          , s:none , 'none')      " For keywords used to define a function.
-call <Sid>X('TSLabel'              , s:purple       , s:none , 'italic')    " For labels: `label:` in C and `:label:` in Lua
-call <Sid>X('TSMethod'             , s:blue         , s:none , 'none')      " For method calls and definitions.
-call <Sid>X('TSNamespace'          , s:red_light    , s:none , 'none')      " For identifiers referring to modules and namespaces.
-call <Sid>X('TSNumber'             , s:yellow       , s:none , 'none')      " For integers
-call <Sid>X('TSOperator'           , s:cyan         , s:none , 'none')      " For any operator: `+`, but also `->` and `*` in C
-call <Sid>X('TSParameter'          , s:cyan         , s:none , 'none')      " For parameters of a function.
-call <Sid>X('TSParameterReference' , s:cyan         , s:none , 'none')      " For references to parameters of a function.
-call <Sid>X('TSProperty'           , s:red          , s:none , 'none')      " Same as `TSField`.
-call <Sid>X('TSPunctDelimiter'     , s:white        , s:none , 'none')      " For delimiters ie: `.
-call <Sid>X('TSPunctBracket'       , s:blue         , s:none , 'none')      " For brackets and parens
-call <Sid>X('TSPunctSpecial'       , s:white        , s:none , 'none')      " For special punctuation that does not fall in the categories before
-call <Sid>X('TSRepeat'             , s:purple       , s:none , 'italic')    " For keywords related to loops
-call <Sid>X('TSString'             , s:green        , s:none , 'none')      " For strings
-call <Sid>X('TSStringRegex'        , s:green_light  , s:none , 'none')      " For regexes
-call <Sid>X('TSStringEscape'       , s:cyan         , s:none , 'none')      " For escape characters within a string
-call <Sid>X('TSStructure'          , s:yellow       , s:none , 'bold')      " This is left as an exercise for the reader.
-call <Sid>X('TSStrong'             , s:none         , s:none , 'bold')      " For text to be represented with strong.
-call <Sid>X('TSTag'                , s:none         , s:none , 'none')      " Tags like html tag names.
-call <Sid>X('TSTagDelimeter'       , s:blue         , s:none , 'none')      " Tag delimiter link < > /
-call <Sid>X('TSText'               , s:green_dark   , s:none , 'none')      " For strings considered text in a markup language.
-call <Sid>X('TSEmphasis'           , s:none         , s:none , 'italic')    " For text to be represented with emphasis.
-call <Sid>X('TSUnderline'          , s:blue         , s:none , 'underline') " TSUnderline
-call <Sid>X('TSTitle'              , s:none         , s:none , 'bold')      " Text that is part of a title.
-call <Sid>X('TSLiteral'            , s:green_dark   , s:none , 'bold')      " Literal text.
-call <Sid>X('TSURI'                , s:blue         , s:none , 'underline') " Any URI like a link or email.
-call <Sid>X('TSType'               , s:yellow       , s:none , 'none')      " For types.
-call <Sid>X('TSTypeBuiltin'        , s:yellow       , s:none , 'none')      " For builtin types (you guessed it, right ?).
-call <Sid>X('TSVariable'           , s:white        , s:none , 'none')      " Variable names
-call <Sid>X('TSVariableBuiltin'    , s:yellow       , s:none , 'none')      " Variable names that are defined by the languages, like `this` or `self`.
+" Quick-scope (unblevable/quick-scope)
+call <Sid>X('QuickScopePrimary'   , s:none , s:none , 'bold,underline')
+call <Sid>X('QuickScopeSecondary' , s:none , s:none , 'bold,undercurl')
 
 " }}}1
